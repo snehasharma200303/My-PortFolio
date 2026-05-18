@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   PALETTE  "Champagne & Plum"
+   Backgrounds   : warm ivory #FAFAF7 / parchment #F5F4EF
+   Primary accent: rich plum  #6535BC
+   Secondary     : antique amber #C8891E
+   Text          : warm charcoal #17161A / stone #6B6875
+   Border        : warm parchment #E4E2DA
+───────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --bg:          #FAFAF7;
+  --bg-alt:      #F5F4EF;
+  --border:      #E4E2DA;
+  --text-pri:    #17161A;
+  --text-sec:    #6B6875;
+  --text-mute:   #A09DA8;
+  --plum:        #6535BC;
+  --plum-hover:  #5528A4;
+  --amber:       #C8891E;
+}
+
+/* ─── Reset & Base ─── */
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-pri);
+  overflow-x: hidden;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* ─── Custom scrollbar ─── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-alt); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #6535BC, #C8891E);
+  border-radius: 10px;
+}
+
+/* ─── Text selection ─── */
+::selection {
+  background: rgba(101, 53, 188, 0.14);
+  color: var(--text-pri);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   UTILITY CLASSES
+───────────────────────────────────────────────────────────────────────────── */
+@layer utilities {
+  /* Plum → Amber — the signature gradient */
+  .gradient-text {
+    @apply bg-gradient-to-r from-plum-600 to-amber-500 bg-clip-text text-transparent;
+  }
+
+  /* Warm ivory card */
+  .card {
+    background: #ffffff;
+    border: 1px solid #E4E2DA;
+    border-radius: 1rem;
+  }
+
+  /* Soft parchment card */
+  .card-soft {
+    background: #F5F4EF;
+    border: 1px solid #E4E2DA;
+    border-radius: 1rem;
+  }
+}
+
+/* ─── Warm dot grid ─── */
+.dot-grid {
+  background-image: radial-gradient(#D8D5C8 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ─── Plum gradient stripe (used on card tops) ─── */
+.stripe-plum   { background: linear-gradient(to right, #6535BC, #9B7AD8); }
+.stripe-amber  { background: linear-gradient(to right, #E2A83A, #C8891E); }
+.stripe-teal   { background: linear-gradient(to right, #0F9183, #34D5C0); }
+.stripe-rose   { background: linear-gradient(to right, #E05C80, #F4A4B8); }
+.stripe-sage   { background: linear-gradient(to right, #3D8A6B, #7AC4A4); }
+.stripe-umber  { background: linear-gradient(to right, #A86D14, #D4A55A); }
