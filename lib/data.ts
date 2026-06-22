@@ -234,7 +234,7 @@ export const experience = [
   {
     company: "Cadera Infotech",
     role: "Full Stack Developer Intern",
-    duration: " Feb 2026 – Present",
+    duration: " Feb 2026 – July 2026",
     type: "Internship",
     location: "India",
     contributions: [
